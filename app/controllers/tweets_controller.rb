@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:destroy, :new, :create]
+  before_action :authenticate_user!
   
   def index
     @user = current_user
