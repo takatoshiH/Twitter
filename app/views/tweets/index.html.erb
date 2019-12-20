@@ -1,1 +1,10 @@
 <h1>ツイート一覧</h1>
+
+<ul>
+<% @tweets.each do |tweet| %>
+<li>
+<%=  tweet.sentence %>
+<% end %>
+</ul>
+
+<%= link_to "Tweet", new_tweet_path %>
