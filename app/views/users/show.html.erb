@@ -5,7 +5,9 @@
 <% @user.tweets.each do |tweet| %>
 <ul>
   <li>
-    <%= tweet.sentence %>
+    <%=  link_to tweet.sentence, tweet_path(tweet) %>
   </li>
 </ul>
 <% end %>
+
+<%= link_to "Top", root_path %>

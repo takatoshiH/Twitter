@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  before_action :authenticate_user!, only: [:destroy, :new, :create]
   
   def index
     @user = current_user
@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @tweet = Tweet.find(params[:id])
   end
 
