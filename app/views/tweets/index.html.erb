@@ -1,10 +1,12 @@
-<h1>ツイート一覧</h1>
+<div style="width: 100%; background-color:#00aced ; text-align: center">
+  <h1 style="color: white">ツイート一覧</h1>
+</div>
 
-<ul>
+<div style="text-align: center; width: 70%; margin: 10px auto">
 <% @tweets.each do |tweet| %>
-<li>
+<div>
 <%=  link_to tweet.sentence, tweet_path(tweet) %>
+</div>
 <% end %>
-</ul>
-
-<%= link_to "Tweet", new_tweet_path %>
+</div>
+<%= link_to "Tweet", new_user_tweet_path(@user) %>
