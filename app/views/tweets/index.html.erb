@@ -3,7 +3,7 @@
 <ul>
 <% @tweets.each do |tweet| %>
 <li>
-<%=  tweet.sentence %>
+<%=  link_to tweet.sentence, tweet_path(tweet) %>
 <% end %>
 </ul>
 
