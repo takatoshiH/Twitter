@@ -1,6 +1,4 @@
-User.create(email: 'admin@test.com', password: 'password') unless User.find_by(email: 'admin@test.com')
-User.create(email: 'satou@test.com', password: 'password') unless User.find_by(email: 'satou@test.com')
+user = User.create(email: 'admin@test.com', password: 'password', name: "tanaka") unless User.find_by(email: 'admin@test.com')
 
-Tweet.create(sentence: "いいかんじ")
-Tweet.create(sentence: "めっちゃいいかんじ")
-
+Tweet.create(sentence: "いいかんじ", user_id: user.id)
+Tweet.create(sentence: "めっちゃいいかんじ", user_id: user.id)

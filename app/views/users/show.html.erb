@@ -1,0 +1,11 @@
+<h1>ユーザー詳細</h1>
+
+<%= @user.name %>
+
+<% @user.tweets.each do |tweet| %>
+<ul>
+  <li>
+    <%= tweet.sentence %>
+  </li>
+</ul>
+<% end %>
