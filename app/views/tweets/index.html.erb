@@ -15,9 +15,10 @@
     </div>
   </div>
 
-  <div style="text-align: center; width: 75%; margin: 10px auto">
+  <div style="text-align: center; width: 75%; margin: 10px auto;">
     <% @tweets.each do |tweet| %>
     <div style="height: 75px;border: 2px solid #000000; margin-top: 5px">
+      <image src="image.png"></image>
       <%=  tweet.user.name %><br>
       <%=  link_to tweet.sentence, tweet_path(tweet) %><br>
       <%= link_to "リプライ" %>
@@ -25,5 +26,4 @@
     </div>
     <% end %>
   </div>
-
 </div>
