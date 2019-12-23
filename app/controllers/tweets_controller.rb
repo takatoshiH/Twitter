@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to tweets_path
     else
+      # render plain: @tweet.errors.inspect
       render "new"
     end
   end

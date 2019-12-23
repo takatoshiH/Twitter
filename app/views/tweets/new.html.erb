@@ -5,8 +5,8 @@
   <%= form_for @tweet do |f| %>
   <p>
     <%= f.text_field :sentence, placeholder: 'Tweet' %>
-    <% if @tweet.errors.messages[:title].any? %>
-      <span class="error"><%= @tweet.errors.messages[:title][0] %></span>
+    <% if @tweet.errors.messages[:sentence].any? %>
+      <span class="error"><%= @tweet.errors.messages[:sentence][0] %></span>
     <% end %>
   </p>
   <p>

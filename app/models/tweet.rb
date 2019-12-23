@@ -5,6 +5,5 @@ class Tweet < ApplicationRecord
   has_many :replies
 
   validates :sentence, presence: true
-  validates :sentence, length: { in: 1..140 }
-
+  validates :sentence, length: { maximum: 140}
 end
