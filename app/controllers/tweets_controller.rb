@@ -28,11 +28,15 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    # 処理を分岐させる
-    @user = current_user
-    @tweet = @user.tweets.find(params[:id])
-    @tweet.destroy
-    redirect_to root_path
+    @user = Tweet.find(params[:id]).user
+    
+    if @user == current_user
+      @tweet = @user.tweets.find(params[:id])
+      @tweet.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
