@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tweets, only: [:index, :show, :new, :create] 
   resources :users do
-    resources :tweets
+    resources :tweets do
+      resources :likes
+    end
   end
 end

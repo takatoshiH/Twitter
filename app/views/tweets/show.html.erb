@@ -2,10 +2,37 @@
   <h1 style="color: white"><%= link_to "Twitterもどき", root_path, style:"color:white; text-decoration: none;" %></h1>
 </div>
 
-<div style="width: 75%; margin: 10px auto">
+<div style="display: flex; width:75%; margin: 5px auto;">
+  <div style="margin: 5px auto;">
+    <div style="text-align: center;margin-top: 5px">
+      <%= link_to "Tweet", new_user_tweet_path(@user) %>
+    </div>
+    <div style="text-align: center">
+      <%= link_to "Home", user_path(@user) %>
+    </div>
+    <div style="text-align: center">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+    </div>
+  </div>
+
+<div style="text-align: center; width:75%; margin: 10px auto">
+<div>
   <%= link_to @tweet.user.name, user_path(@tweet.user) %>
 </div>
 
 <div style="width: 75%; margin: 10px auto">
   <%= @tweet.sentence %>
+</div>
+
+<% if current_user.already_liked?(@tweet) %>
+  <%= button_to 'いいねを取り消す', user_tweet_like_path(@user, @tweet), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', user_tweet_likes_path(@user, @tweet), method: :create%>
+<% end %>
+
+<h2>いいねしたユーザー</h2>
+<% @tweet.liked_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>
+</div>
 </div>
