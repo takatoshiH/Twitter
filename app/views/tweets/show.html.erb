@@ -15,24 +15,27 @@
     </div>
   </div>
 
-<div style="text-align: center; width:75%; margin: 10px auto">
-<div>
-  <%= link_to @tweet.user.name, user_path(@tweet.user) %>
-</div>
+  <div style="text-align: center; width:75%; margin: 10px auto">
+    <div>
+      <%= link_to @tweet.user.name, user_path(@tweet.user) %>
+    </div>
 
-<div style="width: 75%; margin: 10px auto">
-  <%= @tweet.sentence %>
-</div>
+    <div style="width: 75%; margin: 10px auto">
+      <%= @tweet.sentence %>
+    </div>
 
-<% if current_user.already_liked?(@tweet) %>
-  <%= button_to 'いいねを取り消す', user_tweet_like_path(@user, @tweet), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', user_tweet_likes_path(@user, @tweet), method: :create%>
-<% end %>
+    <% if current_user.already_liked?(@tweet) %>
+      <%= button_to 'いいねを取り消す', user_tweet_like_path(@user, @tweet), method: :delete %>
+    <% else %>
+      <%= button_to 'いいね', user_tweet_likes_path(@user, @tweet), method: :create%>
+    <% end %>
 
-<h2>いいねしたユーザー</h2>
-<% @tweet.liked_users.each do |user| %>
-  <li><%= user.name %></li>
-<% end %>
-</div>
+    <h2>いいねしたユーザー</h2>
+    <% @tweet.liked_users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </div>
+  <div>
+    <p><%= link_to "削除", user_tweet_path(@user,@tweet), method: :delete %></p>
+  </div>
 </div>

@@ -27,6 +27,14 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    # 処理を分岐させる
+    @user = current_user
+    @tweet = @user.tweets.find(params[:id])
+    @tweet.destroy
+    redirect_to root_path
+  end
+
   private
     def tweet_params
       params.require(:tweet).permit(:sentence)
