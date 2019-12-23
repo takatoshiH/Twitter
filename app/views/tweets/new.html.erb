@@ -1,8 +1,16 @@
-<%= form_for @tweet do |f| %>
-<p>
-  <%= f.text_field :sentence, placeholder: 'Tweet' %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+<div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
+  <h1 style="color: white">Twitterもどき</h1>
+</div>
+<div style="text-align: center">
+  <%= form_for @tweet do |f| %>
+  <p>
+    <%= f.text_field :sentence, placeholder: 'Tweet' %>
+    <% if @tweet.errors.messages[:title].any? %>
+      <span class="error"><%= @tweet.errors.messages[:title][0] %></span>
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+</div>

@@ -1,5 +1,5 @@
 <div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
-  <h1 style="color: white">ツイート一覧</h1>
+  <h1 style="color: white">Twitterもどき</h1>
 </div>
 
 <div style="display: flex; width:75%; margin: 5px auto;">
@@ -18,7 +18,6 @@
   <div style="text-align: center; width: 75%; margin: 10px auto;">
     <% @tweets.each do |tweet| %>
     <div style="height: 75px;border: 2px solid #000000; margin-top: 5px">
-      <image src="image.png"></image>
       <%=  tweet.user.name %><br>
       <%=  link_to tweet.sentence, tweet_path(tweet) %><br>
       <%= link_to "リプライ" %>

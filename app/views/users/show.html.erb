@@ -1,13 +1,36 @@
-<h1>ユーザー詳細</h1>
+<div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
+  <h1 style="color: white">Twitterもどき</h1>
+</div>
+<div style="text-align: center">
+  <%= @user.name %><br>
+    <%= @user.tweets.count %>
+</div>
 
-<%= @user.name %>
+<div style="display: flex; width:75%; margin: 5px auto;">
+  <div>
+    <div style="text-align: center;margin-top: 5px">
+      <%= link_to "Tweet", new_user_tweet_path(@user) %>
+    </div>
+    <div style="text-align: center">
+      <%= link_to "Home", user_path(@user) %>
+    </div>
+    <div style="text-align: center">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+    </div>
+  </div>
 
-<% @user.tweets.each do |tweet| %>
-<ul>
-  <li>
-    <%=  link_to tweet.sentence, tweet_path(tweet) %>
-  </li>
-</ul>
-<% end %>
+  <div style="text-align: center; width:75%; margin: 10px auto">
+
+    <% @user.tweets.each do |tweet| %>
+      <div style="height: 75px;border: 2px solid #000000; margin-top: 5px">
+        <image src="image.png"></image>
+        <%=  tweet.user.name %><br>
+        <%=  link_to tweet.sentence, tweet_path(tweet) %><br>
+        <%= link_to "リプライ" %>
+        <%= link_to "いいね" %>
+      </div>
+      <% end %>
+  </div>
+</div>
 
 <%= link_to "Top", root_path %>
