@@ -1,9 +1,15 @@
 <div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
   <h1 style="color: white">Twitterもどき</h1>
 </div>
-<div style="text-align: center">
-  <%= @user.name %><br>
-    <%= @user.tweets.count %>
+
+<div style="text-align: center;display: flex;width:75%; margin: 5px auto">
+  <div style="margin: 5px auto;">
+    <h3>@<%= @user.name %></h3>
+    <p>ツイート<%= @user.tweets.count %></p>
+  </div>
+  <div>
+  <p><%= link_to "変更", edit_user_path(@user) %></p>
+  </div>
 </div>
 
 <div style="display: flex; width:75%; margin: 5px auto;">

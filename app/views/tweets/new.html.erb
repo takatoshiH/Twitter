@@ -1,10 +1,24 @@
 <div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
   <h1 style="color: white">Twitterもどき</h1>
 </div>
-<div style="text-align: center">
+
+<div style="display: flex; width:75%; margin: 5px auto;">
+<div>
+  <div style="text-align: center">
+    <%= link_to "Tweet", new_user_tweet_path(@user) %>
+  </div>
+  <div style="text-align: center">
+    <%= link_to "Home", user_path(@user) %>
+  </div>
+  <div style="text-align: center">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+  </div>
+</div>
+
+<div style="text-align: center;margin: 10px auto;">
   <%= form_for @tweet do |f| %>
   <p>
-    <%= f.text_field :sentence, placeholder: 'Tweet' %>
+    <%= f.text_area :sentence, placeholder: 'Tweet', :size=>"60x20" %>
     <% if @tweet.errors.messages[:sentence].any? %>
       <span class="error"><%= @tweet.errors.messages[:sentence][0] %></span>
     <% end %>
@@ -13,4 +27,5 @@
     <%= f.submit %>
   </p>
   <% end %>
+</div>
 </div>

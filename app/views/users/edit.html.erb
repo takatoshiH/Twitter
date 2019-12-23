@@ -1,0 +1,12 @@
+<h2>Edit User</h2>
+<%= form_for @user, url: user_path(@user) do |f| %>
+<p>
+  <%= f.text_field :name, placeholder: 'enter name' %>
+  <% if @user.errors.messages[:name].any? %>
+  <span class="error"><%= @user.errors.messages[:name][0] %></span>
+  <% end %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
