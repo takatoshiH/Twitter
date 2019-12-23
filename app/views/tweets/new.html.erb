@@ -1,5 +1,5 @@
 <div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
-  <h1 style="color: white">Twitterもどき</h1>
+  <h1 style="color: white"><%= link_to "Twitterもどき", root_path, style:"color:white; text-decoration: none;" %></h1>
 </div>
 
 <div style="display: flex; width:75%; margin: 5px auto;">
@@ -11,7 +11,7 @@
     <%= link_to "Home", user_path(@user) %>
   </div>
   <div style="text-align: center">
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "color:white;"%>
   </div>
 </div>
 
