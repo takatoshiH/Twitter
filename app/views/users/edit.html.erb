@@ -7,6 +7,12 @@
   <% end %>
 </p>
 <p>
+  <%= f.text_field :introduction, placeholder: 'enter intro' %>
+    <% if @user.errors.messages[:introduction].any? %>
+    <span class="error"><%= @user.errors.messages[:introduction][0] %></span>
+  <% end %>
+  </p>
+<p>
   <%= f.submit %>
 </p>
 <% end %>
