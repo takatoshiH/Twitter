@@ -35,7 +35,7 @@
 
     <h2>いいねしたユーザー</h2>
     <% @tweet.liked_users.each do |user| %>
-      <li><%= user.name %></li>
+      <li><%= link_to user.name, user_path(user)%></li>
     <% end %>
   </div>
   <div>
