@@ -6,6 +6,9 @@
 <div style="display: flex; width:75%; margin: 5px auto;">
   <div>
     <div style="text-align: center">
+      @<%= @user.name %>
+    </div>
+    <div style="text-align: center">
       <%= link_to "Tweet", new_user_tweet_path(@user) %>
     </div>
     <div style="text-align: center">
