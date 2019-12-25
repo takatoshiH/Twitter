@@ -5,7 +5,7 @@
 <div style="text-align: center;display: flex;width:75%; margin: 5px auto">
   <div style="margin: 5px auto;">
     <h3>@<%= @user.name %></h3>
-    <h4><%=  @user.introduction %></h4>
+    <h4>一言:<%=  @user.introduction %></h4>
     <p>ツイート<%= @user.tweets.count %></p>
   </div>
   <div>
@@ -34,7 +34,6 @@
 
     <% @user.tweets.each do |tweet| %>
       <div style="height: 75px;border: 2px solid #000000; margin-top: 5px">
-        <image src="image.png"></image>
         <%=  tweet.user.name %><br>
         <%=  link_to tweet.sentence, tweet_path(tweet) %><br>
         いいね <%= tweet.liked_users.count %>
