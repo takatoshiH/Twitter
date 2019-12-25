@@ -45,6 +45,10 @@
     <% end %>
   </div>
   <div>
-    <p><%= link_to "削除", user_tweet_path(@user,@tweet), method: :delete %></p>
+    <p>
+      <% if current_user == @user %>
+        <%= link_to "削除", user_tweet_path(@user,@tweet), method: :delete %>
+      <% end %>
+    </p>
   </div>
 </div>
