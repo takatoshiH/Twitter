@@ -1,12 +1,13 @@
 <div style="width: 75%; background-color:#00aced ; text-align: center; margin: 5px auto">
-    <h1 style="color: white"><%= link_to "Twitterもどき", root_path, style:"color:white; text-decoration: none;" %></h1>
-  </div>
+   <h1 style="color: white"><%= link_to "Twitterもどき", root_path, style:"color:white; text-decoration: none;" %></h1>
+</div>
+<h1>フォロワー一覧</h1>
   
-  <div style= "margin: 10px auto; width:50%">
-    <% @user.followers.each do |user| %>
-       <div>
-          <%= link_to user.name, user_path(user) %>
+<div style= "margin: 10px auto; width:50%">
+   <% @user.followers.each do |user| %>
+      <div>
+         <%= link_to user.name, user_path(user) %>
        </div>
-    <% end %>
+   <% end %>
 </div>
   
