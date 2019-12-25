@@ -24,6 +24,10 @@
     <div style="text-align: center">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
     </div>
+    <div>
+        <%= render 'follow_form' %>
+        <%= render 'stats' %>
+    </div>
   </div>
 
   <div style="text-align: center; width:75%; margin: 10px auto">
