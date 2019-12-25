@@ -37,8 +37,7 @@
         <image src="image.png"></image>
         <%=  tweet.user.name %><br>
         <%=  link_to tweet.sentence, tweet_path(tweet) %><br>
-        <%= link_to "リプライ" %>
-        <%= link_to "いいね" %>
+        いいね <%= tweet.liked_users.count %>
       </div>
       <% end %>
   </div>
