@@ -26,12 +26,18 @@
     <div style="width: 75%; margin: 10px auto">
       <%= @tweet.sentence %>
     </div>
+    <div>
+        いいね<%= @tweet.liked_users.count %>
+    </div>
 
     <% if current_user.already_liked?(@tweet) %>
       <%= button_to 'いいねを取り消す', user_tweet_like_path(@user, @tweet), method: :delete %>
     <% else %>
       <%= button_to 'いいね', user_tweet_likes_path(@user, @tweet), method: :post%>
     <% end %>
+    <div>
+      <%= link_to "Reply" %>
+    </div>
 
     <h2>いいねしたユーザー</h2>
     <% @tweet.liked_users.each do |user| %>
